@@ -2,6 +2,12 @@
 
 This is a sql vulnerability scanner, intended for a list of urls. This is made to be multi-process, so it's much much faster than traditional single thread/process scanning. 
 
+# Short Example
+    $ cd Desktop
+    $ git clone https://github.com/mikazz/sqli-scanner
+    $ cd sqli-scanner
+    $ python sqli-scanner.py -f root/Desktop/links.txt -o /root/Desktop/output.txt
+
 # Usage
 
 ```
@@ -36,4 +42,13 @@ You can use `-p` to change the number of processes to generate. The default is t
 ---
 > If you have trouble stopping the processes with `Ctrl+C`, try `Ctrl+Z` to move it to background and then do `kill processID` to kill the process using the process ID. 
 
+# In Action
 
+## Detekcja 
+
+Jak sprawdzić czy strona jest podatna na atak? Bardzo prosto, musimy sprawdzić czy pobiera ona informacje z bazy w linku.  
+Strony, które pobierają sobie takie dane jest łatwo wychwycić, w Google wpisujemy hasło:
+https://www.google.pl/intl/pl/help/operators.html (operatory wyszukiwania zaawansowanego)
+
+    inurl:index.php?id=
+    
